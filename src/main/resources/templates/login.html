@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - SecureApp</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<div class="glass-container">
+    <div class="glass-card animate-in">
+        <div class="icon-circle">
+            <i data-lucide="lock" class="icon-primary"></i>
+        </div>
+        <h2>Authentification</h2>
+        <p>Veuillez entrer vos identifiants pour accéder à votre espace sécurisé.</p>
+
+        <div th:if="${param.error}" class="error-msg">
+            <i data-lucide="alert-circle"></i> Identifiants incorrects.
+        </div>
+
+        <div th:if="${param.logout}" class="success-msg">
+            <i data-lucide="check-circle"></i> Vous êtes désormais déconnecté.
+        </div>
+
+        <form th:action="@{/authenticate}" method="post">
+            <div class="input-group">
+                <label for="username">Nom d’utilisateur</label>
+                <div class="input-wrapper">
+                    <i data-lucide="user"></i>
+                    <input type="text" id="username" name="username" placeholder="votre identifiant" required autofocus>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Mot de passe</label>
+                <div class="input-wrapper">
+                    <i data-lucide="key-round"></i>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Se connecter <i data-lucide="chevron-right"></i>
+            </button>
+        </form>
+    </div>
+</div>
+<script>lucide.createIcons();</script>
+</body>
+</html>

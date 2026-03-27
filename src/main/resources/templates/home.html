@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - SecureApp</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<div class="glass-container">
+    <div class="glass-card animate-in">
+        <div class="icon-circle">
+            <i data-lucide="home" class="icon-primary"></i>
+        </div>
+        <h2>Bienvenue</h2>
+        <p>Authentification réussie ! Choisissez votre destination.</p>
+
+        <div class="nav-grid">
+            <a th:href="@{/user/dashboard}" class="nav-card">
+                <i data-lucide="layout-dashboard" class="nav-icon user-icon"></i>
+                <div class="nav-content">
+                    <span class="nav-title">Utilisateur</span>
+                    <span class="nav-desc">Accéder à vos données</span>
+                </div>
+                <i data-lucide="arrow-right" class="nav-arrow"></i>
+            </a>
+            
+            <a th:href="@{/admin/dashboard}" class="nav-card">
+                <i data-lucide="shield-check" class="nav-icon admin-icon"></i>
+                <div class="nav-content">
+                    <span class="nav-title">Administrateur</span>
+                    <span class="nav-desc">Paramètres système</span>
+                </div>
+                <i data-lucide="arrow-right" class="nav-arrow"></i>
+            </a>
+        </div>
+
+        <div class="card-footer">
+            <a th:href="@{/logout}" class="btn-logout">
+                <i data-lucide="log-out"></i> Déconnexion
+            </a>
+        </div>
+    </div>
+</div>
+<script>lucide.createIcons();</script>
+</body>
+</html>

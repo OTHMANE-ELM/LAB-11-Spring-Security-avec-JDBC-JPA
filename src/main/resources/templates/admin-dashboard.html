@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SecureApp</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<div class="glass-container">
+    <div class="glass-card animate-in admin-glow">
+        <div class="icon-circle admin-icon-bg">
+            <i data-lucide="shield-alert" class="icon-admin"></i>
+        </div>
+        <span class="badge badge-admin">Administrator Control</span>
+        <h2>Dashboard Admin</h2>
+        <p>Accès complet aux paramètres avancés du système et à la gestion des utilisateurs.</p>
+
+        <div class="action-buttons">
+            <a th:href="@{/home}" class="btn-secondary">
+                <i data-lucide="arrow-left"></i> Accueil
+            </a>
+            <a th:href="@{/logout}" class="btn-danger">
+                <i data-lucide="power"></i> Quitter
+            </a>
+        </div>
+    </div>
+</div>
+<script>lucide.createIcons();</script>
+</body>
+</html>

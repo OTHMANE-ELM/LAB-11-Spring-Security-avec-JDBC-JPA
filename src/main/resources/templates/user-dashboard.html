@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - SecureApp</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<div class="glass-container">
+    <div class="glass-card animate-in">
+        <div class="icon-circle">
+            <i data-lucide="terminal" class="icon-primary"></i>
+        </div>
+        <span class="badge badge-user">Standard Access</span>
+        <h2>Espace Membre</h2>
+        <p>Bienvenue ! Vous avez accès aux fonctionnalités standards de l'application.</p>
+
+        <div class="action-buttons">
+            <a th:href="@{/home}" class="btn-secondary">
+                <i data-lucide="arrow-left"></i> Retour
+            </a>
+            <a th:href="@{/logout}" class="btn-secondary">
+                <i data-lucide="log-out"></i> Déconnexion
+            </a>
+        </div>
+    </div>
+</div>
+<script>lucide.createIcons();</script>
+</body>
+</html>
